@@ -242,10 +242,10 @@ module simon (
             led <= 4'b0000;
             millis_counter <= 0;
             score_ena <= 1;
+            seq[0] <= next_random;
           end
         end
         StateInit: begin
-          seq[0] <= next_random;
           seq_length <= 1;
           seq_counter <= 0;
           tone_sequence_counter <= 0;
@@ -282,6 +282,7 @@ module simon (
           millis_counter <= 0;
           if (btn != 0) begin
             state <= StateUserInput;
+            seq[seq_length] <= next_random;
             case (btn)
               4'b0001: user_input <= 0;
               4'b0010: user_input <= 1;
@@ -300,7 +301,6 @@ module simon (
             if (user_input == seq[seq_counter]) begin
               if (seq_counter + 1 == seq_length) begin
                 millis_counter <= 0;
-                seq[seq_length] <= next_random;
                 seq_length <= seq_length + 1;
                 state <= StateNextLevel;
                 score_inc <= 1;
@@ -351,6 +351,7 @@ module simon (
             led <= 4'b0000;
             sound_freq <= 0;
             millis_counter <= 0;
+            seq[0] <= next_random;
             state <= StateInit;
           end
         end

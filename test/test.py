@@ -101,7 +101,9 @@ async def test_simon(dut):
     await ClockCycles(dut.clk, 510 * ticks_per_ms)
 
     assert await simon.read_segments() == "00"
-    assert await simon.read_one_led() == 0
+    initial_led_index = await simon.read_one_led()
+    assert initial_led_index in [0, 1, 2, 3]
+    dut._log.info(f"Initial LED index: {initial_led_index}")
 
     # Wait 300ms for the LED to go off 
     await ClockCycles(dut.clk, 300 * ticks_per_ms)
@@ -111,8 +113,8 @@ async def test_simon(dut):
     await ClockCycles(dut.clk, 100 * ticks_per_ms)
 
     # Press the correct button, check the the LED is lit
-    await simon.press_button(0)
-    assert await simon.read_one_led() == 0
+    await simon.press_button(initial_led_index)
+    assert await simon.read_one_led() == initial_led_index
 
     # Wait for 310ms for the input to be registered
     await ClockCycles(dut.clk, 310 * ticks_per_ms)
