@@ -1,25 +1,44 @@
 [*]
-[*] GTKWave Analyzer v3.4.0 (w)1999-2022 BSI
-[*] Mon Nov 20 16:00:28 2023
+[*] GTKWave Analyzer v3.3.103 (w)1999-2019 BSI
+[*] Tue Jan 23 10:42:58 2024
 [*]
-[dumpfile] "/home/uri/p/tt-new-template-proto/test/tb.vcd"
-[dumpfile_mtime] "Mon Nov 20 15:58:34 2023"
-[dumpfile_size] 1110
-[savefile] "/home/uri/p/tt-new-template-proto/test/tb.gtkw"
+[dumpfile] "/home/uri/p/tt06-simon-game/test/tb.vcd"
+[dumpfile_mtime] "Tue Jan 23 10:34:48 2024"
+[dumpfile_size] 6575894
+[savefile] "/home/uri/p/tt06-simon-game/test/tb.gtkw"
 [timestart] 0
-[size] 1376 600
-[pos] -1 -1
-*-24.534533 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[size] 1908 999
+[pos] -330 -300
+*-37.429760 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] tb.
+[treeopen] tb.user_project.
+[treeopen] tb.user_project.simon1.
 [sst_width] 297
 [signals_width] 230
 [sst_expanded] 1
-[sst_vpaned_height] 158
+[sst_vpaned_height] 304
+@200
+-Game Pins
+@28
+tb.rst_n
+tb.clk
+@22
+tb.btn[3:0]
+tb.led[3:0]
+@28
+tb.speaker
+@29
+tb.seginv
+@28
+tb.dig1
+tb.dig2
+@22
+tb.seg[6:0]
+@200
+-
 @28
 tb.user_project.ena
-@29
 tb.user_project.clk
-@28
 tb.user_project.rst_n
 @200
 -Inputs

@@ -66,6 +66,7 @@ module score (
     if (rst) begin
       ones <= 0;
       tens <= 0;
+      active_digit <= 0;
     end else if (inc) begin
       ones <= ones + 1;
       if (ones == 9) begin
@@ -226,7 +227,7 @@ module simon (
       score_inc <= 0;
       score_rst <= 0;
 
-      if (tick_counter == ticks_per_milli) begin
+      if (tick_counter == ticks_per_milli - 1) begin
         tick_counter   <= 0;
         millis_counter <= millis_counter + 1;
       end
