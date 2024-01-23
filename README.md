@@ -1,41 +1,26 @@
 ![](../../workflows/gds/badge.svg) ![](../../workflows/docs/badge.svg) ![](../../workflows/test/badge.svg)
 
-# Tiny Tapeout Verilog Project Template
-
-- [Read the documentation for project](docs/info.md)
-
-## What is Tiny Tapeout?
+# Simon Says Game for Tiny Tapeout
 
 TinyTapeout is an educational project that aims to make it easier and cheaper than ever to get your digital designs manufactured on a real chip.
 
-To learn more and get started, visit https://tinytapeout.com.
+Learn more at https://tinytapeout.com.
 
-## Verilog Projects
+![Simon Says](docs/tt-simon-game.jpg)
 
-1. Add your Verilog files to the `src` folder.
-2. Edit the [info.yaml](info.yaml) and update information about your project, paying special attention to the `source_files` and `top_module` properties.
-3. Edit [docs/info.md](docs/info.md) and add a description of your project.
-4. Optionally, add a testbench to the `test` folder. See [test/README.md](test/README.md) for more information.
+## About the game
 
-The GitHub action will automatically build the ASIC files using [OpenLane](https://www.zerotoasiccourse.com/terminology/openlane/).
+Simon says is a simple electronic memory game: the user has to repeat a growing sequence of colors.
+The sequence is displayed by lighting up the LEDs. Each color also has a corresponding tone.
 
-## Enable GitHub actions to build the results page
+In each turn, the game will play the sequence, and then wait for the user to repeat the sequence
+by pressing the buttons according to the color sequence.
+If the user repeated the sequence correctly, the game will play a "leveling-up" sound,
+add a new color at the end of the sequence, and move to the next turn.
 
-- [Enabling GitHub Pages](https://tinytapeout.com/faq/#my-github-action-is-failing-on-the-pages-part)
+The game continues until the user has made a mistake. Then a game over sound is played, and the game restarts.
 
-## Resources
+## Online simulation
 
-- [FAQ](https://tinytapeout.com/faq/)
-- [Digital design lessons](https://tinytapeout.com/digital_design/)
-- [Learn how semiconductors work](https://tinytapeout.com/siliwiz/)
-- [Join the community](https://tinytapeout.com/discord)
-- [Build your design locally](https://docs.google.com/document/d/1aUUZ1jthRpg4QURIIyzlOaPWlmQzr-jBn3wZipVUPt4)
-
-## What next?
-
-- [Submit your design to the next shuttle](https://app.tinytapeout.com/).
-- Edit [this README](README.md) and explain your design, how it works, and how to test it.
-- Share your project on your social network of choice:
-  - LinkedIn [#tinytapeout](https://www.linkedin.com/search/results/content/?keywords=%23tinytapeout) [@TinyTapeout](https://www.linkedin.com/company/100708654/)
-  - Mastodon [#tinytapeout](https://chaos.social/tags/tinytapeout) [@matthewvenn](https://chaos.social/@matthewvenn)
-  - X (formerly Twitter) [#tinytapeout](https://twitter.com/hashtag/tinytapeout) [@matthewvenn](https://twitter.com/matthewvenn)
+You can play the game using the online Wokwi simulation at https://wokwi.com/projects/371755521090136065. 
+The simulation also shows the wiring diagram.
