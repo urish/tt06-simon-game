@@ -3,7 +3,7 @@
 
 /*
  * Simon Says game in Verilog. Wokwi Simulation project:
- * https://wokwi.com/projects/371755521090136065
+ * https://wokwi.com/projects/395431892849488897
  */
 
 `default_nettype none
@@ -347,7 +347,7 @@ module simon (
             millis_counter <= 0;
           end
 
-          if (btn != 0) begin
+          if ((btn != 0) && (tone_sequence_counter == 7)) begin
             led <= 4'b0000;
             sound_freq <= 0;
             millis_counter <= 0;
