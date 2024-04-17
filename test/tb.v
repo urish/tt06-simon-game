@@ -1,4 +1,6 @@
-`default_nettype none `timescale 1ns / 1ps
+`default_nettype none
+//
+`timescale 1ns / 1ps
 
 /* This testbench just instantiates the module and makes some convenient wires
    that can be driven / tested by the cocotb test.py.
@@ -12,6 +14,10 @@ module tb ();
     #1;
   end
 
+  // inputs from testbench
+  reg [3:0] btn;
+  reg seginv;
+
   // Wire up the inputs and outputs:
   reg clk;
   reg rst_n;
@@ -21,9 +27,6 @@ module tb ();
   wire [7:0] uo_out;
   wire [7:0] uio_out;
   wire [7:0] uio_oe;
-
-  reg [3:0] btn;
-  reg seginv;
 
   wire [3:0] led = uo_out[3:0];
   wire speaker = uo_out[4];
